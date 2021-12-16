@@ -10,3 +10,4 @@ const airportSchema = new mongoose.schema({
     type: Number,
   },
 })
+module.export = mongoose.model('airport', airportSchema)

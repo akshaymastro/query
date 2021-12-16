@@ -1,4 +1,13 @@
 const mongoose = required('mongoose')
-var Planes = new Mongoose.Schema({
-  airports: [airportSchema],
+var planesSchema = new Mongoose.Schema({
+  field: {
+    type: String,
+  },
+  field: {
+    type: String,
+  },
+  field: {
+    type: Number,
+  },
 })
+module.export = mongoose.model('collection', planesSchema)
