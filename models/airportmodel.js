@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const airportSchema = new mongoose.schema({
+const airportSchema = new mongoose.Schema({
   airportsName: {
     type: String,
   },
@@ -10,4 +10,6 @@ const airportSchema = new mongoose.schema({
     type: Number,
   },
 })
-module.export = mongoose.model('airport', airportSchema)
+const AirportModel = mongoose.model('airports', airportSchema)
+
+module.exports = AirportModel

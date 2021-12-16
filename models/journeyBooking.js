@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-var journeyBookingSchema = new mongoose.Schema({
+var JourneyBookingSchema = new mongoose.Schema({
   field: {
     type: String,
   },
@@ -9,5 +9,14 @@ var journeyBookingSchema = new mongoose.Schema({
   field: {
     type: Number,
   },
+  planeId:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"PlaneFlights"
+  },
+  airport:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"Airports"
+  }
 })
-module.export = mongoose.model('collection', journeyBookingSchema)
+var journeyBooking=mongoose.model('journeyBookings', JourneyBookingSchema)
+module.export =journeyBooking

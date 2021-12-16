@@ -1,13 +1,15 @@
-const mogoose = require('mongoose')
-var airLineEmployeesSchema = new mogoose.Schema({
-  field: {
+const mongoose = require('mongoose')
+const airportSchema = new mongoose.Schema({
+  airportsName: {
     type: String,
   },
-  field: {
+  location: {
     type: String,
   },
-  field: {
+  airportCost: {
     type: Number,
   },
 })
-module.export = mongoose.model('collection name', airLineEmployeesSchema)
+const AirlineEmpModel = mongoose.model('airlineEmp', airportSchema)
+
+module.exports = AirlineEmpModel

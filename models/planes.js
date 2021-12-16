@@ -1,5 +1,5 @@
-const mongoose = required('mongoose')
-var planesSchema = new Mongoose.Schema({
+const mongoose = require('mongoose')
+var planesSchema = new mogoose.Schema({
   field: {
     type: String,
   },
@@ -10,4 +10,5 @@ var planesSchema = new Mongoose.Schema({
     type: Number,
   },
 })
-module.export = mongoose.model('collection', planesSchema)
+var planes= mongoose.model('pilots', planesSchema)
+module.exports =  planes

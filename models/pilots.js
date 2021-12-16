@@ -1,5 +1,6 @@
+
 const mongoose = require('mongoose')
-var piloteSchema = new mongoose.Schema({
+var piloteSchema = new mogoose.Schema({
   field: {
     type: String,
   },
@@ -10,4 +11,5 @@ var piloteSchema = new mongoose.Schema({
     type: Number,
   },
 })
-module.export = mongoose.model('collection', piloteSchema)
+var pilots= mongoose.model('pilots', piloteSchema)
+module.exports =  pilots

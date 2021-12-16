@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-var ravenueSchema = new mongoose.Schema({
+var ravenueSchema = new mogoose.Schema({
   field: {
     type: String,
   },
@@ -10,4 +10,5 @@ var ravenueSchema = new mongoose.Schema({
     type: Number,
   },
 })
-module.export = mongoose.model('airpraort', ravenueSchema)
+var ravenue= mongoose.model('pilots', ravenueSchema)
+module.exports =  ravenue

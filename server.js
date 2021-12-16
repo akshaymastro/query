@@ -1,13 +1,11 @@
+require('./routes/airports.routes')
+require('./database')
 const express = require('express')
-const server = express()
-const mongoose = require('mongoose')
-/////////
-
-mongoose.connect('mongodb://localhost:27017/db_name', () => {
-  consolele.log('mongoDb connected')
-})
-require('./airportmodels')
-
-server.listen(3000, () => {
+const app = express()
+const airportRoutes=require('./routes/airports.routes')
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+app.use('/airports',airportRoutes)
+app.listen(3000, () => {
   console.log('server started at 3000')
 })

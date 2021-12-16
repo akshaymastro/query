@@ -1,5 +1,6 @@
-const mongoose = required('mongoose')
-var PlaneFlightsSchema = new Mongoose.Schema({
+
+const mongoose = require('mongoose')
+var PlaneFlightsSchema = new mogoose.Schema({
   field: {
     type: String,
   },
@@ -10,4 +11,5 @@ var PlaneFlightsSchema = new Mongoose.Schema({
     type: Number,
   },
 })
-module.export = mongoose.model('collection', PlaneFlightsSchema)
+var planeflights= mongoose.model('pilots', PlaneFlightsSchema)
+module.exports =  planeflights
