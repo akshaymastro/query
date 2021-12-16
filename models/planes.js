@@ -10,5 +10,5 @@ var planesSchema = new mogoose.Schema({
     type: Number,
   },
 })
-var planes= mongoose.model('pilots', planesSchema)
+var planes = mongoose.model("planes", planesSchema);
 module.exports =  planes

@@ -1,22 +1,25 @@
 const mongoose = require('mongoose')
 var JourneyBookingSchema = new mongoose.Schema({
-  field: {
+  fligtTo: {
     type: String,
   },
-  field: {
+  fightFrom: {
     type: String,
   },
-  field: {
-    type: Number,
+  passengerDetail: {
+    type: Object,
   },
-  planeId:{
-    type: mongoose.Schema.Types.ObjectId,
-    ref:"PlaneFlights"
+  bookingdatetime: {
+    type: Date,
   },
-  airport:{
+  planeId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref:"Airports"
-  }
-})
+    ref: "PlaneFlights",
+  },
+  airport: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Airports",
+  },
+});
 var journeyBooking=mongoose.model('journeyBookings', JourneyBookingSchema)
 module.export =journeyBooking

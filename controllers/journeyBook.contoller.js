@@ -46,6 +46,9 @@ const deleteJourneyBooking = async (req,res) => {
     res.json(e)
   }
 }
-module.exports={
-  newAirline
-}
+module.exports = {
+  Newjourney,
+  getJourneyBooking,
+  updateJpurneyBooking,
+  deleteJourneyBooking,
+};

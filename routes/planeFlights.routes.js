@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const airportController = require("../controllers/airports.controller")
-router.post('/', airportController.newAirport);
+const PlaneFlightController = require("../controllers/planeflights.controller");
+router.post("/", PlaneFlightController.newPlaneFlights);
+router.get("/getFlights", PlaneFlightController.getPlaneFlightsById);
+router.patch("/updateFlight", PlaneFlightController.updatePlaneFlights);
+router.delete("/deleteFlight/:id", PlaneFlightController.deletePlaneFlights);
 module.exports=router
