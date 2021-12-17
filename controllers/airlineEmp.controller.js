@@ -1,10 +1,10 @@
-const AirlineModel = require('../models/airLineEmployees')
+const AirlineEmpModel = require('../models/airLineEmolyees')
 
 const NewEmp = async (req, res) => {
   try {
     console.log(req.body);
-    const newAirline = new AirlineModel(req.body);
-    const response = await newAirport.save();
+    const newEmp = new AirlineEmpModel(req.body);
+    const response = await newEmp.save();
 
     res.status(200).json(response);
   } catch (e) {
@@ -16,9 +16,9 @@ const NewEmp = async (req, res) => {
 const getEmps = async (req, res) => {
   try {
     console.log(req.body);
-    const airline = await AirlineModel.find({});
+    const airlineemp = await AirlineEmpModel.find({});
 
-    res.status(200).json(airports);
+    res.status(200).json(airlineemp);
   } catch (e) {
     console.log(e);
     res.json(e);
@@ -26,9 +26,9 @@ const getEmps = async (req, res) => {
 };
 const getEmp = async (req, res) => {
   try {
-    const airline = await AirlineModel.findById({ _id: req.params.id });
+    const airlineemp = await AirlineEmpModel.findById({ _id: req.params.id });
 
-    res.status(200).json(airport);
+    res.status(200).json(airlineemp);
   } catch (e) {
     console.log(e);
     res.json(e);
@@ -36,12 +36,16 @@ const getEmp = async (req, res) => {
 };
 const updateEmp = async (req, res) => {
   try {
-    const updateAirport = await AirlineModel.updateOne(
+    console.log(req.body,"body")
+    console.log(req.params,"params")
+    console.log(req.query,"query")
+    const updateEmployee  = await AirlineEmpModel.updateOne(
       { _id: req.body._id },
       { ...req.body }
     );
+    console.log(req.body)
 
-    res.status(200).json({ message: "Airport Update Successfully" });
+    res.status(200).json({ message: "Employee Update Successfully" });
   } catch (e) {
     console.log(e);
     res.json(e);
@@ -50,7 +54,7 @@ const updateEmp = async (req, res) => {
 const deleteEmp = async (req, res) => {
   try {
     console.log(req.body);
-    const updateAirline = await AirlineModel.findOneAndDelete({
+    const updateAirline = await AirlineEmpModel.findOneAndDelete({
       _id: req.params.id,
     });
     console.log(updateAirline);

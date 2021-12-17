@@ -1,23 +1,23 @@
 
 const mongoose = require('mongoose')
-var PlaneFlightsSchema = new mogoose.Schema({
+var PlaneFlightsSchema = new mongoose.Schema({
   startingAirpot: {
     type: String,
   },
   destinationAirpot: {
-    type: Number,
+    type: String,
   },
   planeId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "planes",
   },
   departureTime: {
-    type: Date,
+    type: String,
   },
   arrivalTime: {
-    type: Date,
+    type: String,
   },
-  piolt: {
+  pilot: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Pilots",
   },
@@ -26,5 +26,5 @@ var PlaneFlightsSchema = new mogoose.Schema({
     ref: "Airports",
   },
 });
-var planeflights= mongoose.model('pilots', PlaneFlightsSchema)
+var planeflights= mongoose.model('planeFlights', PlaneFlightsSchema)
 module.exports =  planeflights

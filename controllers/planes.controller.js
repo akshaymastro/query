@@ -3,8 +3,8 @@ const Plane = require('../models/planes')
 const newPlane = async (req, res) => {
   try {
     console.log(req.body);
-    const newAirline = new Plane(req.body);
-    const response = await newAirport.save();
+    const newPlane = new Plane(req.body);
+    const response = await newPlane.save();
 
     res.status(200).json(response);
   } catch (e) {
@@ -16,9 +16,9 @@ const newPlane = async (req, res) => {
 const getPlane = async (req, res) => {
   try {
     console.log(req.body);
-    const airline = await Plane.find({});
+    const planes = await Plane.find({});
 
-    res.status(200).json(airports);
+    res.status(200).json(planes);
   } catch (e) {
     console.log(e);
     res.json(e);
@@ -26,9 +26,9 @@ const getPlane = async (req, res) => {
 };
 const getPlaneById = async (req, res) => {
   try {
-    const airline = await Plane.findById({ _id: req.params.id });
+    const plane = await Plane.findById({ _id: req.params.id });
 
-    res.status(200).json(airport);
+    res.status(200).json(plane);
   } catch (e) {
     console.log(e);
     res.json(e);
@@ -36,7 +36,7 @@ const getPlaneById = async (req, res) => {
 };
 const updatePlane = async (req, res) => {
   try {
-    const updateAirport = await Plane.updateOne(
+    const updatePlane = await Plane.updateOne(
       { _id: req.body._id },
       { ...req.body }
     );

@@ -1,10 +1,10 @@
-const planeflights = require("../models/planeFligts");
+const planeflights = require("../models/planeFlights");
 
 const newPlaneFlights = async (req, res) => {
   try {
     console.log(req.body);
-    const newAirline = new planeflights(req.body);
-    const response = await newAirport.save();
+    const newPlaneFlight = new planeflights(req.body);
+    const response = await newPlaneFlight.save();
 
     res.status(200).json(response);
   } catch (e) {
@@ -18,7 +18,7 @@ const getPlaneFlights = async (req, res) => {
     console.log(req.body);
     const airline = await planeflights.find({});
 
-    res.status(200).json(airports);
+    res.status(200).json(airline);
   } catch (e) {
     console.log(e);
     res.json(e);
@@ -28,7 +28,7 @@ const getPlaneFlightsById = async (req, res) => {
   try {
     const airline = await planeflights.findById({ _id: req.params.id });
 
-    res.status(200).json(airport);
+    res.status(200).json(airline);
   } catch (e) {
     console.log(e);
     res.json(e);

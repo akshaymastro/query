@@ -1,14 +1,27 @@
 const mongoose = require('mongoose')
-var planesSchema = new mogoose.Schema({
-  field: {
+var planesSchema = new mongoose.Schema({
+  planemake: {
     type: String,
   },
-  field: {
+  planemodel: {
     type: String,
   },
-  field: {
+  flyingrange: {
     type: Number,
   },
+  lengthOfService:{
+    type: String
+  },
+  status:{
+    type: Boolean
+  },
+  seatingCapacity:{
+    type: Number
+  },
+  airportId:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"Airports"
+  }
 })
 var planes = mongoose.model("planes", planesSchema);
 module.exports =  planes

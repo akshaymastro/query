@@ -10,16 +10,16 @@ var JourneyBookingSchema = new mongoose.Schema({
     type: Object,
   },
   bookingdatetime: {
-    type: Date,
+    type: String,
   },
   planeId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "PlaneFlights",
+    ref: "planes",
   },
   airport: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Airports",
   },
 });
-var journeyBooking=mongoose.model('journeyBookings', JourneyBookingSchema)
-module.export =journeyBooking
+var journeyBooking = mongoose.model('journeyBookings', JourneyBookingSchema)
+module.exports =journeyBooking

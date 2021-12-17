@@ -4,7 +4,7 @@ const AirportModel = require('../models/airportmodel')
 const newAirport = async (req,res) => {
   try{
     console.log(req.body)
-      const newAirport = new Airportmodel(req.body) 
+      const newAirport = new AirportModel(req.body) 
       const response =await  newAirport.save()
     
       res.status(200).json(response)
@@ -48,8 +48,8 @@ const updateAirport = async (req,res) => {
 const deleteAirport = async (req,res) => {
   try{
     console.log(req.body)
-      const updateAirport = await AirportModel.findOneAndDelete({_id: req.params.id})
-    console.log(updateAirport)
+      const deleteAirport = await AirportModel.findOneAndDelete({_id: req.params.id})
+    console.log(deleteAirport)
       res.status(200).json("Airpot Deleted SuccessFully")
   }catch(e){
     console.log(e)

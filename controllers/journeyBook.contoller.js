@@ -4,7 +4,7 @@ const Newjourney = async (req,res) => {
   try{
     console.log(req.body)
       const newbook = new journeyBooking(req.body) 
-      const response =await  newAirport.save()
+      const response =await  newbook.save()
     
       res.status(200).json(response)
   }catch(e){
@@ -16,9 +16,9 @@ const Newjourney = async (req,res) => {
 const getJourneyBooking = async (req,res) => {
   try{
     console.log(req.body)
-      const airline= await journeyBooking.find({})
+      const bookings= await journeyBooking.find({})
     
-      res.status(200).json(airports)
+      res.status(200).json(bookings)
   }catch(e){
     console.log(e)
     res.json(e)
@@ -27,9 +27,9 @@ const getJourneyBooking = async (req,res) => {
 
 const updateJpurneyBooking = async (req,res) => {
   try{
-      const updateAirport = await journeyBooking.updateOne({_id: req.body._id},{...req.body})
+      const updatebookings = await journeyBooking.updateOne({_id: req.body._id},{...req.body})
     
-      res.status(200).json({message:"Airport Update Successfully"})
+      res.status(200).json({message:"Booking Update Successfully"})
   }catch(e){
     console.log(e)
     res.json(e)
@@ -38,9 +38,9 @@ const updateJpurneyBooking = async (req,res) => {
 const deleteJourneyBooking = async (req,res) => {
   try{
     console.log(req.body)
-      const updateAirline = await journeyBooking.findOneAndDelete({_id: req.params.id})
-    console.log(updateAirline)
-      res.status(200).json("Airpot Deleted SuccessFully")
+      const bookings = await journeyBooking.findOneAndDelete({_id: req.params.id})
+    console.log(bookings)
+      res.status(200).json("bookings Deleted SuccessFully")
   }catch(e){
     console.log(e)
     res.json(e)

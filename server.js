@@ -8,7 +8,7 @@ const journeyBookingRoute = require("./routes/journeyBooking.routes");
 const ravenueRoutes = require("./routes/ravenue.routes");
 const pilotsRoutes = require("./routes/pilots.routes");
 const planeFlightstRoutes = require("./routes/planeFlights.routes");
-const planeRoutes = require("./routes/plane.routes");
+const planeRoutes = require("./routes/planes.routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/airports", airportRoutes);

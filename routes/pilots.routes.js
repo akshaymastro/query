@@ -3,7 +3,7 @@ const router = express.Router();
 const PilotController = require("../controllers/pilots.controller");
 
 router.post("/", PilotController.newPiolts);
-router.get("/getbookings", PilotController.getPiolts);
-router.patch("/updateJourney", PilotController.updatePiolts);
-router.delete("/deletejourney/:id", PilotController.deletePiolts);
+router.get("/getpilots", PilotController.getPiolts);
+router.patch("/updatePilots", PilotController.updatePiolts);
+router.delete("/deletePilots/:id", PilotController.deletePiolts);
 module.exports = router;

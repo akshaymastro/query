@@ -1,11 +1,15 @@
 const mongoose = require('mongoose')
 const airportSchema = new mongoose.Schema({
-  empnameame: {
+  empname: {
     type: String,
   },
   emptype: {
     type: String,
   },
+  airportId:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"Airports"
+  }
 });
 const AirlineEmpModel = mongoose.model('airlineEmp', airportSchema)
 
